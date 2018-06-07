@@ -1,5 +1,10 @@
 #!/bin/sh
-echo "Building build adaguc-server"
+image=adaguc-server
+if [ "$1" = "test" ]; then
+  image="${image}-test"
+fi
+echo "Building build $image"
 
-docker build -t adaguc-server .
-#docker save -o adaguc-server.dockerimage adaguc-server
+docker build -t $image .
+
+#docker save -o ${image}.dockerimage ${image}

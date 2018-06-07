@@ -1,4 +1,4 @@
-FROM node:8
+FROM node:10
 ENV NPM_CONFIG_LOGLEVEL warn
 WORKDIR /frontend
 ADD  https://github.com/KNMI/GeoWeb-FrontEnd/archive/master.tar.gz geoweb-frontend.tar.gz

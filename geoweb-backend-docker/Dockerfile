@@ -6,7 +6,7 @@ ADD https://github.com/KNMI/GeoWeb-BackEnd/archive/master.tar.gz geoweb-backend.
 RUN tar xvf geoweb-backend.tar.gz
 RUN mv GeoWeb-BackEnd-master geoweb-backend
 WORKDIR /src/geoweb-backend/
-RUN mvn package
+RUN mvn package -DskipTests
 RUN cp ./target/geoweb-backend-*.jar /src/geoweb-backend.jar
 RUN mkdir -p /tmp/admin/locations/
 COPY defaultstore/admin/locations/locations.dat /tmp/admin/locations/locations.dat

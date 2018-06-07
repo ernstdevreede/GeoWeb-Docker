@@ -1,5 +1,9 @@
 #!/bin/sh
-echo "Building build geoweb-backend"
+image=geoweb-backend
+if [ "$1" = "test" ]; then
+  image="${image}-test"
+fi
+echo "Building build $image"
 
-docker build -t geoweb-backend .
-#docker save -o geoweb-backend.dockerimage geoweb-backend
+docker build -t $image .
+#docker save -o ${image}.dockerimage ${image}
